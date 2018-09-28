@@ -3,6 +3,10 @@ import {encrypt, decrypt} from './codec'
 import {getConfig} from './config'
 
 export function initHooks () {
+  if(window){
+    window.wicEncrypt = encrypt;
+    window.wicDecrypt = decrypt;
+  }
   hookUpload()
   hookContextMenu()
 }
